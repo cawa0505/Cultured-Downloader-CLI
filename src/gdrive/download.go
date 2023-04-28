@@ -214,7 +214,7 @@ func (gdrive *GDrive) DownloadMultipleFiles(files []*models.GdriveFileToDl, conf
 				<-queue
 			}()
 
-			os.MkdirAll(file.FilePath, 0666)
+			os.MkdirAll(file.FilePath, 0755)
 			filePath := filepath.Join(file.FilePath, file.Name)
 
 			err := gdrive.DownloadFile(file, filePath, config, queue)

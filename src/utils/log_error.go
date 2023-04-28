@@ -170,7 +170,7 @@ func LogMessageToPath(message, filePath string, level int) {
 	logFile, err := os.OpenFile(
 		filePath,
 		os.O_RDWR|os.O_CREATE|os.O_APPEND,
-		0666,
+		0755,
 	)
 	if err != nil {
 		err = fmt.Errorf(
